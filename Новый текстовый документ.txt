@@ -1,0 +1,57 @@
+cls
+@ECHO OFF
+title Folder Private
+if EXIST "HTG Locker" goto UNLOCK
+if NOT EXIST Private goto MDLOCKER
+:CONFIRM
+echo Are you sure you want to lock the folder(Y/N)
+set/p "cho=(more than)"
+if %cho%==Y goto LOCK
+if %cho%==y goto LOCK
+if %cho%==n goto END
+if %cho%==N goto END
+echo Invalid choice.
+goto CONFIRM
+:LOCK
+ren Private "HTG Locker"
+attrib +h +s "HTG Locker"
+echo Folder locked
+goto End
+:UNLOCK
+echo Enter password to unlock folder
+set/p "pass=(more than)"
+if NOT %pass%== kaross goto FAIL
+attrib -h -s "HTG Locker"
+ren "HTG Locker" Private
+echo Folder Unlocked successfully
+goto End
+:FAIL
+echo Invalid password
+goto end
+:MDLOCKER
+md Private
+echo Private created successfully
+goto End
+:End
+
+по создание закрыой папки 
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+логин- github  (nmikhailov01valera@mail.ru)
+пароль- github (Hool1234q)
+
+акаунт в гет хабе)
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+
+1) Создать новый репозиторий на github
+2) В папке проекта подключить git, написав git init
+3) git commit -m "first commit"
+4) git branch -M main
+5) git remote add origin сылка на проект.git
+6) git push -u origin main
+
+
+
+
+
